@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<head>
+	<style>
+	#title{
+		text-align: center;
+		margin-top: 20px;
+	}
+	</style>
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+	<script>
+		var ET01Label = "Earth Justice";
+		var ET02Label = "Indigenous Justice";
+		var ET03Label = "Ecoscience";
+		var ET04Label = "Ecospirituality";
+		var ET05Label = "Science for Humanity";
+		var ET06Label = "Science Policy";
+		var ET07Label = "Small Green Steps";
+		var ET08Label = "Other";
+		var ET01Color = "#ffa600"
+		var ET02Color = "#ff7c43"
+		var ET03Color = "#f95d6a"
+		var ET04Color = "#d45087"
+		var ET05Color = "#a05195"
+		var ET06Color = "#ffa600"
+		var ET07Color = "#665191"
+		var ET08Color = "#000000"
+		var AttSize = 20
+
+
+		function filterRows(rows, type){
+			x=rows.filter(function(d){ return d.KName == type })
+			//console.log(x)
+			return x;
+
+		}
+
+		function ET01Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET01Trace = {
+					name: ET01Label,
+					x:unpack(rows, 'Place (x)', ET01Label),
+					y:unpack(rows, 'Knowledge (y)', ET01Label),
+					z:unpack(rows, 'Action (z)', ET01Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET01Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET01Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET02Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET02Trace = {
+					name: ET02Label,
+					x:unpack(rows, 'Place (x)', ET02Label),
+					y:unpack(rows, 'Knowledge (y)', ET02Label),
+					z:unpack(rows, 'Action (z)', ET02Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET02Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET02Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET03Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET03Trace = {
+					name: ET03Label,
+					x:unpack(rows, 'Place (x)', ET03Label),
+					y:unpack(rows, 'Knowledge (y)', ET03Label),
+					z:unpack(rows, 'Action (z)', ET03Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET03Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET03Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET04Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET04Trace = {
+					name: ET04Label,
+					x:unpack(rows, 'Place (x)', ET04Label),
+					y:unpack(rows, 'Knowledge (y)', ET04Label),
+					z:unpack(rows, 'Action (z)', ET04Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET04Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET04Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET05Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET05Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET05Label),
+					y:unpack(rows, 'Knowledge (y)', ET05Label),
+					z:unpack(rows, 'Action (z)', ET05Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET05Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET05Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET06Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET06Trace = {
+					name: ET06Label,
+					x:unpack(rows, 'Place (x)', ET06Label),
+					y:unpack(rows, 'Knowledge (y)', ET06Label),
+					z:unpack(rows, 'Action (z)', ET06Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET06Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET06Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET07Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET07Trace = {
+					name: ET07Label,
+					x:unpack(rows, 'Place (x)', ET07Label),
+					y:unpack(rows, 'Knowledge (y)', ET07Label),
+					z:unpack(rows, 'Action (z)', ET07Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET07Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET07Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function ET08Plot(){
+			document.getElementById('plot').innerHTML = "";
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET08Trace = {
+					name: ET08Label,
+					x:unpack(rows, 'Place (x)', ET08Label),
+					y:unpack(rows, 'Knowledge (y)', ET08Label),
+					z:unpack(rows, 'Action (z)', ET08Label),
+					mode: 'markers',
+					marker: {
+						size: 5,
+						opacity: 0.8,
+						color: ET08Color
+					},
+					type: 'scatter3d'
+
+				};
+				var data = [ET08Trace];
+				var layout = {
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+		}
+
+		function showPlotAll(){
+			// w/ attractors
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAtt.csv', function(err, rows){
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET01Trace = {
+					name: ET01Label,
+					x:unpack(rows, 'Place (x)', ET01Label),
+					y:unpack(rows, 'Knowledge (y)', ET01Label),
+					z:unpack(rows, 'Action (z)', ET01Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+					//	color: 'rgb(238, 117, 47)'
+					},
+					type: 'scatter3d',
+					legendgroup: 'attractors'
+				};
+				ET02Trace = {
+					name: ET02Label,
+					x:unpack(rows, 'Place (x)', ET02Label),
+					y:unpack(rows, 'Knowledge (y)', ET02Label),
+					z:unpack(rows, 'Action (z)', ET02Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(88, 165, 92)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET03Trace = {
+					name: ET03Label,
+					x:unpack(rows, 'Place (x)', ET03Label),
+					y:unpack(rows, 'Knowledge (y)', ET03Label),
+					z:unpack(rows, 'Action (z)', ET03Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET04Trace = {
+					name: ET04Label,
+					x:unpack(rows, 'Place (x)', ET04Label),
+					y:unpack(rows, 'Knowledge (y)', ET04Label),
+					z:unpack(rows, 'Action (z)', ET04Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+					//	colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET05Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET05Label),
+					y:unpack(rows, 'Knowledge (y)', ET05Label),
+					z:unpack(rows, 'Action (z)', ET05Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET06Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET06Label),
+					y:unpack(rows, 'Knowledge (y)', ET06Label),
+					z:unpack(rows, 'Action (z)', ET06Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET07Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET07Label),
+					y:unpack(rows, 'Knowledge (y)', ET07Label),
+					z:unpack(rows, 'Action (z)', ET07Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+				ET08Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET08Label),
+					y:unpack(rows, 'Knowledge (y)', ET08Label),
+					z:unpack(rows, 'Action (z)', ET08Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d',
+					legendgroup:  'attractors'
+				};
+
+				var data = [ET01Trace, ET02Trace, ET03Trace, ET04Trace, ET05Trace, ET06Trace, ET07Trace, ET08Trace ];
+				var layout = {
+
+
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					colorway: [ET01Color, ET02Color, ET03Color, ET04Color, ET05Color, ET06Color, ET07Color, ET08Color],
+
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+
+				}};
+				d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAll.csv', function(err, rows2){
+					function unpack2(rows2, key, filter){
+						f=filterRows(rows2,filter)
+						return f.map(function(f){return f[key];});
+					}
+					ET01Trace2 = {
+						name: ET01Label,
+						x:unpack2(rows, 'Place (x)', ET01Label),
+						y:unpack2(rows, 'Knowledge (y)', ET01Label),
+						z:unpack2(rows, 'Action (z)', ET01Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						//	color: 'rgb(238, 117, 47)'
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET02Trace2 = {
+						name: ET02Label,
+						x:unpack2(rows2, 'Place (x)', ET02Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET02Label),
+						z:unpack2(rows2, 'Action (z)', ET02Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(88, 165, 92)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET03Trace2 = {
+						name: ET03Label,
+						x:unpack2(rows2, 'Place (x)', ET03Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET03Label),
+						z:unpack2(rows2, 'Action (z)', ET03Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET04Trace2 = {
+						name: ET04Label,
+						x:unpack2(rows2, 'Place (x)', ET04Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET04Label),
+						z:unpack2(rows2, 'Action (z)', ET04Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+						//	colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET05Trace2 = {
+						name: ET05Label,
+						x:unpack2(rows2, 'Place (x)', ET05Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET05Label),
+						z:unpack2(rows2, 'Action (z)', ET05Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET06Trace2 = {
+						name: ET06Label,
+						x:unpack2(rows2, 'Place (x)', ET06Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET06Label),
+						z:unpack2(rows2, 'Action (z)', ET06Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET07Trace2 = {
+						name: ET05Label,
+						x:unpack2(rows2, 'Place (x)', ET07Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET07Label),
+						z:unpack2(rows2, 'Action (z)', ET07Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+					ET08Trace2 = {
+						name: ET08Label,
+						x:unpack2(rows2, 'Place (x)', ET08Label),
+						y:unpack2(rows2, 'Knowledge (y)', ET08Label),
+						z:unpack2(rows2, 'Action (z)', ET08Label),
+						mode: 'markers',
+						marker: {
+							size: 5,
+							opacity: 0.8,
+							//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+						},
+						type: 'scatter3d',
+						legendgroup:  'points'
+					};
+
+					var data2 = [ET01Trace2, ET02Trace2, ET03Trace2, ET04Trace2, ET05Trace2,ET06Trace, ET07Trace, ET08Trace ];
+					var layout = {
+
+
+						showlegend: true,
+						legend: {
+							x: 1,
+							y: 0.5
+						},
+						colorway: [ET01Color, ET02Color, ET03Color, ET04Color, ET05Color, ET06Color, ET07Color, ET08Color],
+
+						scene: {
+							xaxis:{
+								title: 'Place (x)',
+								range: [-1, 1]
+							},
+							yaxis:{
+								title: 'Knowledge (y)',
+								range: [-1, 1]
+							},
+							zaxis:{
+								title: 'Action (z)',
+								range: [-1, 1]
+							},
+							},
+						margin: {
+						l: 0,
+						r: 0,
+						b: 0,
+						t: 0
+
+					}};
+					Plotly.newPlot('plot', data2, layout);
+				});
+
+			});
+
+			return true;
+		}
+
+		function showPlotAtt(){
+		//	document.getElementById('plot').innerHTML = "";
+		console.log("test")
+			d3.csv('https://raw.githubusercontent.com/lcenvs/3D-Graphing-With-Plotly-EcoTypes2022-TOP8/main/knumAtt.csv', function(err, rows){
+
+				function unpack(rows, key, filter){
+					f=filterRows(rows,filter)
+					return f.map(function(f){return f[key];});
+				}
+				ET01Trace = {
+					name: ET01Label,
+					x:unpack(rows, 'Place (x)', ET01Label),
+					y:unpack(rows, 'Knowledge (y)', ET01Label),
+					z:unpack(rows, 'Action (z)', ET01Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+					//	color: 'rgb(238, 117, 47)'
+					},
+					type: 'scatter3d'
+				};
+				ET02Trace = {
+					name: ET02Label,
+					x:unpack(rows, 'Place (x)', ET02Label),
+					y:unpack(rows, 'Knowledge (y)', ET02Label),
+					z:unpack(rows, 'Action (z)', ET02Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(88, 165, 92)']
+					},
+					type: 'scatter3d'
+				};
+				ET03Trace = {
+					name: ET03Label,
+					x:unpack(rows, 'Place (x)', ET03Label),
+					y:unpack(rows, 'Knowledge (y)', ET03Label),
+					z:unpack(rows, 'Action (z)', ET03Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+				ET04Trace = {
+					name: ET04Label,
+					x:unpack(rows, 'Place (x)', ET04Label),
+					y:unpack(rows, 'Knowledge (y)', ET04Label),
+					z:unpack(rows, 'Action (z)', ET04Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+					//	colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+				ET05Trace = {
+					name: ET05Label,
+					x:unpack(rows, 'Place (x)', ET05Label),
+					y:unpack(rows, 'Knowledge (y)', ET05Label),
+					z:unpack(rows, 'Action (z)', ET05Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+				ET06Trace = {
+					name: ET06Label,
+					x:unpack(rows, 'Place (x)', ET06Label),
+					y:unpack(rows, 'Knowledge (y)', ET06Label),
+					z:unpack(rows, 'Action (z)', ET06Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+
+				ET07Trace = {
+					name: ET07Label,
+					x:unpack(rows, 'Place (x)', ET07Label),
+					y:unpack(rows, 'Knowledge (y)', ET07Label),
+					z:unpack(rows, 'Action (z)', ET07Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+
+				ET08Trace = {
+					name: ET08Label,
+					x:unpack(rows, 'Place (x)', ET08Label),
+					y:unpack(rows, 'Knowledge (y)', ET08Label),
+					z:unpack(rows, 'Action (z)', ET08Label),
+					mode: 'markers',
+					marker: {
+						size: AttSize,
+						opacity: 1.0,
+						//colorway: ['rgb(238, 117, 47)', 'rgb(88, 165, 92)','rgb(242, 189, 66)']
+					},
+					type: 'scatter3d'
+				};
+
+
+				var data = [ET01Trace, ET02Trace, ET03Trace, ET04Trace, ET05Trace, ET06Trace, ET07Trace, ET08Trace ];
+				var layout = {
+
+
+					showlegend: true,
+				  legend: {
+				    x: 1,
+				    y: 0.5
+				  },
+					colorway: [ET01Color, ET02Color, ET03Color, ET04Color, ET05Color, ET06Color, ET07Color, ET08Color],
+
+					scene: {
+						xaxis:{
+							title: 'Place (x)',
+							range: [-1, 1]
+						},
+						yaxis:{
+							title: 'Knowledge (y)',
+							range: [-1, 1]
+						},
+						zaxis:{
+							title: 'Action (z)',
+							range: [-1, 1]
+						},
+						},
+					margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0
+
+				}};
+				Plotly.newPlot('plot', data, layout);
+			});
+			return true;
+
+
+
+		}
+
+	</script>
+
+</head>
+<body>
+	<div class="buttons">
+		<button type="button" id=ETO1Label onclick="ET01Plot()">ET01Label</button>
+		<button type="button" id=ET02Label onclick="ET02Plot()">ET02Label</button>
+		<button type="button" id=ET03Label onclick="ET03Plot()">ET03Label</button>
+		<button type="button" id=ET04Label onclick="ET04Plot()">ET04Label</button>
+		<button type="button" id=ET05Label onclick="ET05Plot()">ET05Label</button><br />
+		<button type="button" id=ETO6Label onclick="ET06Plot()">ET06Label</button>
+		<button type="button" id=ET07Label onclick="ET07Plot()">ET07Label</button>
+		<button type="button" id=ET08Label onclick="ET08Plot()">ET08Label</button>
+		<button type="button" id="All EcoTypes (Top 8 Including Other)" onclick="showPlotAll()">Show All EcoTypes w/ Attractors</button>
+		<button type="button" id="EcoTypes Attractors (Top 8 Including Other)" onclick="showPlotAtt()">Show EcoTypes Attractors Only</button>
+	</div>
+	<h3 id="title">All EcoTypes (Top 8 Including Other)</h3>
+	<div id='plot' >
+
+	</div>
+</body>
+
+<script>
+
+$( document ).ready(function() {
+	showPlotAll()
+
+	$("button").click(function(){
+		t=$(this).attr("id");
+		console.log(t);
+		$("#title").text(t);
+
+
+
+
+	});
+
+});
+
+</script>
+
+
+</html>
