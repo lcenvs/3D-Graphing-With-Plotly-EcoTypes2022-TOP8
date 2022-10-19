@@ -1,0 +1,9 @@
+ID,Place (x),Knowledge (y),Action (z),ETName
+Att01,-0.25,0,0.25,Earth Justice
+Att02,0,-0.25,0.25,Indigenous Justice
+Att03,-0.25,0.25,0,Ecoscience
+Att04,-0.25,-0.25,0,Ecospirituality
+Att05,0.25,0.25,0,Science for Humanity
+Att06,0,0.25,0.25,Science Policy
+Att07,-0.25,0,-0.25,Small Green Steps
+Att08,0,0,0,Other
